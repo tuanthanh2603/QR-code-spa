@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lingam Mạc Thị</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -15,37 +22,58 @@
             flex-direction: column;
             min-height: 100vh;
         }
-        h1, h2 {
+
+        h1,
+        h2 {
             color: #333;
         }
+
         .qr-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 100px;
+            padding: 10px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            /* Cho phép các phần tử xuống dòng khi không đủ không gian */
         }
+
         .qr-code {
+            flex-basis: calc(50% - 40px);
+            /* Độ rộng cơ bản là 50% của cha trừ đi khoảng cách margin */
             margin: 20px;
-            background-color: #fff;
-            padding: 20px;
+            height: 100px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
+
+        /* Thêm media query cho các kích thước màn hình nhỏ hơn */
+        @media (max-width: 768px) {
+            .qr-code {
+                flex-basis: calc(100% - 40px);
+                /* Khi trên màn hình nhỏ, hiển thị full width */
+            }
+        }
+
+
         .qr-code:hover {
             transform: translateY(-5px);
         }
+
         .qr-code img {
-            max-width: 300px;
-            height: auto;
-            display: block;
-            margin: 0 auto 15px;
+            width: 90%;
+            /* Ảnh điền đầy vào box */
+            height: 100%;
+            /* Ảnh điền đầy vào box */
+            object-fit: contain;
         }
+
         .qr-code h2 {
             margin: 0;
             color: #555;
         }
+
         footer {
             color: #fff;
             padding: 20px 0;
@@ -55,6 +83,7 @@
             box-sizing: border-box;
             text-align: center;
         }
+
         footer p {
             color: #555;
             margin: 0 auto;
@@ -62,22 +91,27 @@
         }
     </style>
 </head>
+
 <body>
-    <h1>Lingam</h1>
+    <h1 style="margin-top: 50px;">Lingam</h1>
     <h2 style="font-style: italic;">Chuẩn mực - Văn minh - Tri thức - Đẳng cấp </h2>
     <div class="qr-container">
         <div class="qr-code">
-            <img src="telegram_1.png" alt="Facebook QR Code">
-            <h2 style="font-style: italic; font-weight: 500; font-size: 24px;">Telegram</h2>
+            <a href="https://t.me/macthispasg" >
+                <img src="tele_2.png" alt="Telegram Icon">
+            </a>
         </div>
         <div class="qr-code">
-            <img src="telegram_2.png" alt="Zalo QR Code">
-            <h2 style="font-style: italic; font-weight: 500; font-size: 24px;">Telegram</h2>
+            <a href="https://t.me/macthispahn" >
+                <img src="tele_2.png" alt="Telegram Icon">
+            </a>
         </div>
         <div class="qr-code">
-            <img src="facebook_1.png" alt="Instagram QR Code">
-            <h2 style="font-style: italic; font-weight: 500; font-size: 24px;">Facebook</h2>
+            <a href="https://www.facebook.com/LingamMacThi98LacTrungHN?mibextid=LQQJ4d" >
+                <img src="Facebook-Logo-2019.png" alt="Telegram Icon">
+            </a>
         </div>
+
     </div>
     <footer>
         <p>Hotline: 0927 226 888</p>
@@ -85,4 +119,5 @@
         <p>Cơ sở 2: 223 Hai Bà Trưng, phường 6, Quận 3, TP Hồ Chí Minh</p>
     </footer>
 </body>
+
 </html>
