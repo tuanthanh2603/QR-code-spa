@@ -46,6 +46,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            background-color: #e3ddcf;
         }
 
         /* Thêm media query cho các kích thước màn hình nhỏ hơn */
@@ -85,39 +86,128 @@
         }
 
         footer p {
-            color: #555;
+            color: #fff;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        .body_2 {
+            background-image: url('./bg.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .body_2::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('./bg.png');
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        .body_3 {
+            z-index: 22;
+        }
+
+        .ft {
+            position: absolute;
+            bottom: 0 !important;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                /* Kích thước ban đầu */
+            }
+
+            50% {
+                transform: scale(1.1);
+                /* Phóng to 1.1 lần kích thước ban đầu */
+            }
+
+            100% {
+                transform: scale(1);
+                /* Quay lại kích thước ban đầu */
+            }
+        }
+
+        /* Áp dụng keyframe cho nút liên hệ */
+        .contact-btn {
+            position: fixed;
+            bottom: 60px;
+            right: 30px;
+            z-index: 55;
+            background-color: #ebe6bc;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: pulse 2s infinite;
+            /* Áp dụng keyframe pulse */
+        }
+
+        .contact-btn img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .contact-btn:hover {
+            background-color: #dcc663;
         }
     </style>
 </head>
 
 <body>
-    <h1 style="margin-top: 50px;">Lingam</h1>
-    <h2 style="font-style: italic;">Chuẩn mực - Văn minh - Tri thức - Đẳng cấp </h2>
-    <div class="qr-container">
-        <div class="qr-code">
-            <a href="https://t.me/macthispasg" >
-                <img src="tele_2.png" alt="Telegram Icon">
-            </a>
-        </div>
-        <div class="qr-code">
-            <a href="https://t.me/macthispahn" >
-                <img src="tele_2.png" alt="Telegram Icon">
-            </a>
-        </div>
-        <div class="qr-code">
-            <a href="https://www.facebook.com/LingamMacThi98LacTrungHN?mibextid=LQQJ4d" >
-                <img src="Facebook-Logo-2019.png" alt="Telegram Icon">
-            </a>
-        </div>
+    <div class="body_2">
+        <div class="body_3">
+            <h1 style="margin-top: 50px; color: #fff;">Lingam</h1>
+            <h2 style="font-style: italic; color: #fff; margin-top: 20px;">Chuẩn mực - Văn minh - Tri thức - Đẳng cấp
+            </h2>
+            <div class="qr-container">
+                <div class="qr-code">
+                    <a href="https://t.me/macthispasg">
+                        <img src="tele_2.png" alt="Telegram Icon">
+                    </a>
+                </div>
+                <div class="qr-code">
+                    <a href="https://t.me/macthispahn">
+                        <img src="tele_2.png" alt="Telegram Icon">
+                    </a>
+                </div>
+                <div class="qr-code">
+                    <a href="https://www.facebook.com/LingamMacThi98LacTrungHN?mibextid=LQQJ4d">
+                        <img src="Facebook-Logo-2019.png" alt="Telegram Icon">
+                    </a>
+                </div>
 
+            </div>
+            <footer class="ft">
+                <p>Hotline: 0927 226 888</p>
+                <p>Cơ sở 1: 98 Lạc Trung, phường Vĩnh Tuy, Q. Hai Bà Trưng, TP Hà Nội</p>
+                <p>Cơ sở 2: 223 Hai Bà Trưng, phường 6, Quận 3, TP Hồ Chí Minh</p>
+            </footer>
+        </div>
     </div>
-    <footer>
-        <p>Hotline: 0927 226 888</p>
-        <p>Cơ sở 1: 98 Lạc Trung, phường Vĩnh Tuy, Q. Hai Bà Trưng, TP Hà Nội</p>
-        <p>Cơ sở 2: 223 Hai Bà Trưng, phường 6, Quận 3, TP Hồ Chí Minh</p>
-    </footer>
+    <button class="contact-btn">
+        <a  href="tel:+84927226888">
+            <img src="telephone-call.png" alt="Contact Icon">
+        </a>
+    </button>
+
 </body>
 
 </html>
